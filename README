@@ -1,0 +1,43 @@
+Object-Oriented-ODE-Integrator
+
+Integrator interface to solve 3 different ODE systems:
+
+Duffing forced oscillator,
+linear oscillator,
+lorenz system,
+
+using 3 different integration schemes:
+
+4th order Runge Kutta
+2nd order Adams bashforth
+Explicit Euler
+
+
+Description of files:
+
+• model.h: an abstract base class Model for evaluating f(x, t)
+
+• integrator.h: an abstract base class Integrator for ODE integrators
+
+• duffing.{h,cc}: an implementation of the Duffing oscillator (a derived class of Model).
+
+• linear-oscillator.{h,cc}: an implementation of the Linear oscillator (a derived class of Model).
+
+• lorenz.{h,cc}: an implementation of the Lorenz system (a derived class of Model).
+
+• euler.{h,cc}: an implementation of an explicit Euler integrator (a derived class of Integrator).
+
+• rk4.{h,cc}: an implementation of an 4th order Runge Kutta integrator (a derived class of Integrator).
+
+• ab2.{h,cc}: an implementation of an 2nd order Adams bashforth Integrator (a derived class of Integrator).
+
+• ode_solve.cc: a driver program to integrate the ode system for the given parameter values and initial conditions.
+
+• Makefile: builds the program ode_solve.
+
+The general driver program ode_solve that lets you choose between the different equations and integration schemes. 
+
+It reads commandline arguments in the following format:
+
+ode_solve {equation} {integrator} {timestep} {numsteps}
+
